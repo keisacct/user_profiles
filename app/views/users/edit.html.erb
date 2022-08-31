@@ -1,0 +1,19 @@
+<div class="col-sm-8">
+<%= form_with model: [@user], local: true do |f| %>
+<table class="table">
+    <tbody>
+    <tr>
+        <td>ユーザー名</td>
+        <td><%= f.text_area :username, placeholder: "username" %></td>
+    </tr>
+    <tr>
+        <td>紹介文:</td>
+        <td><%= f.text_area :description, placeholder: "紹介文" %></td>
+    </tr>
+    <tr>
+        <%= f.submit "完了する" %>
+    </tr>
+    </tbody>
+</table>
+<% end %>
+</div>
