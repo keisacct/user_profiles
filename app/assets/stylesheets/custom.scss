@@ -1,0 +1,29 @@
+.profile-name {
+    font-size: 50px;
+    // text-align: center;
+}
+
+.profile-introduction {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+.profile-links {
+    list-style: none;
+    .profile-link {
+      font-size: 40px;
+      display: inline-block;
+      margin-right: 15px;
+      text-align: right;
+      /*Twitter*/
+      .fa-twitter{color:#0c0e0f;}
+      /*Facebook*/
+      .fa-facebook{color:#0c0e0f;}
+      /*LinkedIn*/
+      .fa-linkedin{color:#0c0e0f;}
+      /*Blog*/
+      .fa-link{color: #0c0e0f;}
+    }
+  }
+  

@@ -1,22 +1,39 @@
 <div class="col-sm-8">
-<%= form_with model: [@user], local: true do |f| %>
+<%= form_with model: @user, local: true do |f| %>
 <table class="table">
     <tbody>
-        <tr>
-            <%= f.label :user_icon %>
-            <%= f.file_field :user_icon %>
-        </tr>
-        <tr>
-            <td>ユーザー名</td>
-            <td><%= f.text_area :username, placeholder: "username" %></td>
-        </tr>
-        <tr>
-            <td>紹介文:</td>
-            <td><%= f.text_area :description, placeholder: "紹介文" %></td>
-        </tr>
-        <tr>
-            <%= f.submit "完了する" %>
-        </tr>
+    <tr>
+        <%= f.label :user_icon %>
+        <%= f.file_field :user_icon %>
+    </tr>
+    <tr>
+        <td>ユーザー名</td>
+        <td><%= f.text_field :username, placeholder: "username", maxlenght: "40" %></td>
+    </tr>
+    <tr>
+        <td>紹介文:</td>
+        <td><%= f.text_area :description, placeholder: "紹介文" %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :twitter_url, 'Twitter URL' %></td>
+        <td><%= f.text_field :twitter_url, placeholder: "Optional" %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :linkedin_url, 'LinkedIn URL' %></td>
+        <td><%= f.text_field :linkedin_url, placeholder: "Optional" %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :facebook_url, 'Facebook URL' %></td>
+        <td><%= f.text_field :facebook_url, placeholder: "Optional" %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :blog_url, 'Blog URL' %></td>
+        <td><%= f.text_field :blog_url, placeholder: "Optional" %></td>
+    </tr>
+
+    <tr>
+        <td><%= f.submit '完了' %></td>
+    </tr>
     </tbody>
 </table>
 <% end %>
