@@ -16,8 +16,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    added_attrs = [:username, :email, :password, :password_confirmation]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    default_attrs = [:user_icon, :username, :email, :password, :password_confirmation]
+    added_attrs = [:user_icon, :username, :introduction, :twitter_url, :linkedin_url, :facebook_url, :blog_url]
+    devise_parameter_sanitizer.permit :sign_up, keys: default_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end

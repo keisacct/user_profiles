@@ -8,6 +8,9 @@
         <table class="table">
           <tbody>
             <tr>
+              <%= image_tag @user.user_icon.url %>
+            </tr>
+            <tr>
               <td>ユーザー名</td>
               <td><%= @user.username %></td>
             </tr>
