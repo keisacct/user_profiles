@@ -2,8 +2,16 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   protect_from_forgery with: :exception
-
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def create
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+    end
+    super
+  end
 
   protected
 
