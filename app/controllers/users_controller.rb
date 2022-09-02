@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :authenticate_user!, only: [:show, :edit, :update]
     before_action :move_to_curernt_page, only: [:edit, :update]
     before_action :set_user, only: [:show, :edit, :update]
+    before_action :set_stayed_country, only: :show
     
     def show
     end
@@ -21,6 +22,11 @@ class UsersController < ApplicationController
     private
     def set_user
         @user = User.find(params[:id])
+    end
+
+    def set_stayed_country
+        set_user
+        @stayed_country = StayedCountry.find(params[user_id: @user.id])
     end
 
     def move_to_curernt_page

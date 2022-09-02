@@ -1,0 +1,15 @@
+<%= form_with model: @stayed_country, local: true do |f| %>
+<table class="table">
+    <tbody>
+    <tr>
+        <div class="field">
+            <%= f.text_field  :name, placeholder:"住んだことある国"%>
+            <%= f.collection_select(:country_id, Country.all, :id, :name, {}) %>
+        </div>
+    </tr>
+    <tr>
+        <td><%= f.submit '完了' %></td>
+    </tr>
+    </tbody>
+</table>
+<% end %>

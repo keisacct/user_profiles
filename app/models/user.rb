@@ -6,6 +6,8 @@ class User < ApplicationRecord
          omniauth_providers: [:google_oauth2]
 
   has_many :sns_credentials
+  has_many :stayed_countries
+  has_many :countries, through: [:stayed_countries]
 
   validates :username, presence: true, uniqueness: true
   mount_uploader :user_icon, ImageUploader
