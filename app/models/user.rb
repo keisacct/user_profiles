@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  acts_as_taggable_on
+  acts_as_taggable_on :stayed_countries
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, 
          omniauth_providers: [:google_oauth2]
@@ -8,6 +10,7 @@ class User < ApplicationRecord
   has_many :sns_credentials
   has_many :stayed_countries
   has_many :countries, through: [:stayed_countries]
+  has_many :questions
 
   validates :username, presence: true, uniqueness: true
   mount_uploader :user_icon, ImageUploader

@@ -1,0 +1,10 @@
+<div class="contents row">
+    <div class="container">
+        <h3>質問する<h3>
+        <%= form_with(model: @question, local: true) do |f| %>
+            <%= f.text_field :title, placeholder: "タイトル" %>
+            <%= f.text_area :content, placeholder: "質問内容", rows: "10" %>
+            <%= f.submit "投稿する" %>
+        <% end %>
+    </div>
+</div>

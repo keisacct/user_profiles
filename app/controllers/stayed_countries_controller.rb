@@ -27,11 +27,6 @@ class StayedCountriesController < ApplicationController
     end
 
     private
-    def set_stayed_country
-        set_user
-        @stayed_country = StayedCountry.find(params[user_id: @user.id])
-    end
-
     def set_user
         @user = User.find(params[:id])
     end
@@ -40,6 +35,6 @@ class StayedCountriesController < ApplicationController
     def stayed_country_params
         params.require(:stayed_country).permit(
             :country_id
-        ).merge(user_id: current_user.id)
+        ).merge(user_id: current_user.id, tag_list: params[:stayed_country][:tag])
     end
 end

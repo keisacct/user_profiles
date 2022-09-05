@@ -45,9 +45,9 @@
     <% if user_signed_in? && current_user.id == @user.id %>
     <div class="d-flex flex-column"><%= link_to 'プロフィールを編集する', edit_user_path(current_user.id)%>
       <% if @stayed_country.present? %>
-        <div class="d-flex flex-column"><%= link_to 'マップを編集する',  edit_stayed_country_path(current_user.id)%>
+        <div class="d-flex flex-column"><%= link_to 'マップを編集する',  edit_user_stayed_country_path(current_user.id)%>
       <% else %>
-        <div class="d-flex flex-column"><%= link_to 'マップを作成する',  new_stayed_country_path %>      
+        <div class="d-flex flex-column"><%= link_to 'マップを作成する',  new_user_stayed_country_path %>      
       <% end %>
     <% end %>
     </div>

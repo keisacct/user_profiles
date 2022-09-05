@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     before_action :set_stayed_country, only: :show
     
     def show
+        @country_tags = @user.tag_counts_on(:countries)
     end
 
     def edit
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
 
     def set_stayed_country
         set_user
-        @stayed_country = StayedCountry.find(params[user_id: @user.id])
+        @stayed_country = StayedCountry.find_by(user_id: @user.id)
     end
 
     def move_to_curernt_page
@@ -38,8 +39,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(
-            :user_icon, :username, :description, :twitter_url,
-            :linkedin_url, :facebook_url, :blog_url
+            :user_icon, :username, :description, 
+            :twitter_url, :linkedin_url, :facebook_url, 
+            :blog_url, :tag_list
         )
     end
 end  

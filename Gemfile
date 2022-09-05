@@ -65,3 +65,5 @@ gem 'mini_magick'
 gem 'font-awesome-sass'
 
 gem 'active_hash'
+
+gem 'acts-as-taggable-on', '~> 6.0'

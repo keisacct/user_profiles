@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   }
 
   root to: "questions#index"
-  resources :users, only: [:show, :edit, :update]
-  resources :stayed_countries, only: [:new, :create, :edit, :update]
+  resources :questions
+  resources :users, only: [:show, :edit, :update] do
+    resources :stayed_countries, only: [:new, :create, :edit, :update]
+  end
 end
