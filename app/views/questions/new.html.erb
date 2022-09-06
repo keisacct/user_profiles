@@ -1,10 +1,20 @@
+<%= javascript_pack_tag 'question' %>
+
 <div class="contents row">
     <div class="container">
         <h3>質問する<h3>
         <%= form_with(model: @question, local: true) do |f| %>
-            <%= f.text_field :title, placeholder: "タイトル" %>
-            <%= f.text_area :content, placeholder: "質問内容", rows: "10" %>
-            <%= f.submit "投稿する" %>
+            <div class='form-group'>
+                <div class="field">
+                    <%# <%= f.text_field :title, placeholder: "タイトル" %> 
+                    <%= f.text_area :content, placeholder: "質問内容", id: "editor" %>
+                    <%# <div v-html='input | marked'></div> %>
+                </div>
+                <div class="actions">
+                <%= f.submit %>
+                </div>
+            </div>
         <% end %>
     </div>
 </div>
+

@@ -67,3 +67,6 @@ gem 'font-awesome-sass'
 gem 'active_hash'
 
 gem 'acts-as-taggable-on', '~> 6.0'
+
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
